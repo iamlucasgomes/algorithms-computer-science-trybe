@@ -44,18 +44,16 @@ def is_anagram(first_string, second_string):
     char_list_first_string = list(first_string.lower())
     char_list_second_string = list(second_string.lower())
 
-    char_list_first_string = merge_sort(char_list_first_string)
-    char_list_second_string = merge_sort(char_list_second_string)
+    char_list_first_string = "".join(merge_sort(char_list_first_string))
+    char_list_second_string = "".join(merge_sort(char_list_second_string))
 
-    result = "".join(char_list_first_string) == "".join(
-        char_list_second_string
-    )
+    result = char_list_first_string == char_list_second_string
 
     if first_string == "" or second_string == "":
         result = False
 
     return (
-        "".join(char_list_first_string),
-        "".join(char_list_second_string),
+        char_list_first_string,
+        char_list_second_string,
         result,
     )
