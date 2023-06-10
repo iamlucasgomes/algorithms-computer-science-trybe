@@ -3,14 +3,12 @@ from pytest import raises
 
 
 def test_encrypt_message():
-    assert encrypt_message("abc", 1) == "a_cb"
-    assert encrypt_message("abc", 2) == "c_ba"
-    assert encrypt_message("abc", 3) == "cba"
+    assert encrypt_message("trybe", 2) == "eby_rt"
+    assert encrypt_message("trybe", 3) == "yrt_eb"
+    assert encrypt_message("trybe", 5) == "ebyrt"
 
-    with raises(TypeError) as error:
-        encrypt_message("abc", "")
-    assert str(error) == "tipo inválido para key"
+    with raises(TypeError):
+        encrypt_message("abc", "1")
 
-    with raises(TypeError) as error:
+    with raises(TypeError):
         encrypt_message(4, 1)
-    assert str(error) == "tipo inválido para message"
