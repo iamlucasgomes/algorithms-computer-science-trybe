@@ -12,5 +12,5 @@ def test_encrypt_message():
     assert str(error) == "tipo inválido para key"
 
     with raises(TypeError) as error:
-        encrypt_message(1, 1)
+        encrypt_message(4, 1)
     assert str(error) == "tipo inválido para message"
